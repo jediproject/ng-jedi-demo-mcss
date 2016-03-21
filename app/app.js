@@ -144,10 +144,10 @@ define([
 
                 $routeProviderReference
                     //#hook.yeoman.route# do not remove this line
-                    .when('/core/mysubmodule/myfeature', angularAMD.route({
-                        breadcrumb: ['Core', 'My Submodule', 'My Feature'],
-                        templateUrl: jd.factory.getFileVersion('app/core/features/mysubmodule/myfeature/myfeature.html'),
-                        controllerUrl: jd.factory.getFileVersion('app/core/features/mysubmodule/myfeature/myfeature-ctrl.js')
+                    .when('/core/components', angularAMD.route({
+                        breadcrumb: ['Core', 'Componentes'],
+                        templateUrl: jd.factory.getFileVersion('app/core/features/components/components.html'),
+                        controllerUrl: jd.factory.getFileVersion('app/core/features/components/components-ctrl.js')
                     })).
                     when('/core/animals', angularAMD.route({
                         breadcrumb: ['Core', 'Animais'],

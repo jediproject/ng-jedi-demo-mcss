@@ -1,9 +1,9 @@
 'use strict';
 
 /*
-    Controller for the feature myfeature
+    Controller for the feature components
 */
-jd.factory.newController(['app/core/features/mysubmodule/modalexample/modalexample-ctrl.js'], 'app.core.mysubmodule.myfeature.MyfeatureCtrl', ['$log', 'jedi.dialogs.AlertHelper', 'jedi.dialogs.ModalHelper', function ($log, AlertHelper, ModalHelper) {
+jd.factory.newController(['app/core/features/modalexample/modalexample-ctrl.js'], 'app.core.components.ComponentsCtrl', ['$log', 'jedi.dialogs.AlertHelper', 'jedi.dialogs.ModalHelper', function ($log, AlertHelper, ModalHelper) {
 
     //#region Service initialize
     var service;// = ... e.g: restangular instance
@@ -11,7 +11,7 @@ jd.factory.newController(['app/core/features/mysubmodule/modalexample/modalexamp
 
     //#region View/Model initialize
     var vm = this;
-    vm.myfeatureModel = {
+    vm.componentsModel = {
         list: [{
               id: 1,
               value: 'value 1',
@@ -49,46 +49,46 @@ jd.factory.newController(['app/core/features/mysubmodule/modalexample/modalexamp
 
     //#region Events definitions
     function method1() {
-        $log.info(vm.myfeatureModel);
+        $log.info(vm.componentsModel);
     }
 
     function method2() {
-        $log.info(vm.myfeatureModel);
-        vm.myfeatureModel.list.push({
-            id: vm.myfeatureModel.list.length+1,
-            value: 'value value value value value '+(vm.myfeatureModel.list.length+1),
+        $log.info(vm.componentsModel);
+        vm.componentsModel.list.push({
+            id: vm.componentsModel.list.length+1,
+            value: 'value value value value value '+(vm.componentsModel.list.length+1),
             date: new Date(),
-            number: vm.myfeatureModel.list.length+1
+            number: vm.componentsModel.list.length+1
         });
     }
 
     function method3() {
-        $log.info(vm.myfeatureModel);
+        $log.info(vm.componentsModel);
         AlertHelper.addInfo('Sucesso');
     }
 
     function method4() {
-        $log.info(vm.myfeatureModel);
+        $log.info(vm.componentsModel);
         AlertHelper.addError('Erro');
     }
 
     function method5() {
-        $log.info(vm.myfeatureModel);
+        $log.info(vm.componentsModel);
         Materialize.toast('Sucesso', 3000);
     }
 
     function method6() {
-        $log.info(vm.myfeatureModel);
+        $log.info(vm.componentsModel);
         Materialize.toast('Erro', 3000);
     }
 
     function method7() {
-        $log.info(vm.myfeatureModel);
-        ModalHelper.open('internalModalExample.html', {param: vm.myfeatureModel.list});
+        $log.info(vm.componentsModel);
+        ModalHelper.open('internalModalExample.html', {param: vm.componentsModel.list});
     }
 
     function method8() {
-        $log.info(vm.myfeatureModel);
+        $log.info(vm.componentsModel);
         AlertHelper.confirm("Teste de confirmação?", function() {
            Materialize.toast('Sucesso', 3000);
         }, function() {

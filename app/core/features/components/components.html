@@ -1,0 +1,138 @@
+<form jd-panel ng-controller="app.core.components.ComponentsCtrl as componentsCtrl" name="componentsForm" jd-title="My Feature 1">
+
+    <h5 jd-i18n>Campos básicos</h5>
+
+    <div class="row">
+        <select jd-input jd-label="Select" jd-help="Valor: {{componentsCtrl.componentsModel.data.select | json}}" ng-model="componentsCtrl.componentsModel.data.select"
+        required jd-options="item.id as item.value for item in componentsCtrl.componentsModel.list">
+            <option value="" jd-i18n>Selecione</option>
+        </select>
+
+        <div class="col s3">
+            <a class="btn-floating btn-large waves-effect waves-light red" ng-click="componentsCtrl.method2()"><i class="material-icons">add</i></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <input jd-input="2" jd-label="Input" jd-help="Valor: {{componentsCtrl.componentsModel.data.input | json}}" ng-model="componentsCtrl.componentsModel.data.input"
+        type="text" required />
+
+        <input jd-input="3" jd-label="Input" jd-help="Valor: {{componentsCtrl.componentsModel.data.input | json}}" ng-model="componentsCtrl.componentsModel.data.input"
+        type="text" required />
+
+        <input jd-input="4" jd-label="Input" jd-help="Valor: {{componentsCtrl.componentsModel.data.input | json}}" ng-model="componentsCtrl.componentsModel.data.input"
+        type="text" required />
+
+        <div jd-input jd-label="Texto estático">Valor qualquer...</div>
+    </div>
+
+    <div class="row">
+        <input jd-input="6" jd-grouplabel="Radios" jd-label="{{item.value}}" jd-help="Valor: {{componentsCtrl.componentsModel.data.radios | json}}"
+        ng-model="componentsCtrl.componentsModel.data.radios" type="radio" required jd-repeat="item in componentsCtrl.componentsModel.list"
+        ng-value="item" />
+    </div>
+
+    <div class="row">
+        <input jd-input="6" jd-grouplabel="Checks" jd-label="{{item.value}}" jd-help="Valor: {{componentsCtrl.componentsModel.data.checks | json}}"
+        ng-model="componentsCtrl.componentsModel.data.checks[$index]" type="checkbox" required jd-repeat="item in componentsCtrl.componentsModel.list"
+        ng-value="true" />
+
+        <input jd-input="4" jd-label="Check" jd-help="Valor: {{componentsCtrl.componentsModel.data.check | json}}" ng-model="componentsCtrl.componentsModel.data.check"
+        type="checkbox" required ng-value="true" />
+    </div>
+
+    <div class="row">
+        <textarea jd-input="12" jd-label="Textarea" ng-model="componentsCtrl.componentsModel.data.textarea" required rows="5" jd-help="Valor: {{componentsCtrl.componentsModel.data.textarea | json}}"></textarea>
+    </div>
+
+    <!--h5 jd-i18n>Data / Horas</h5>
+
+	<div class="row">
+		<input required jd-max-date="componentsCtrl.componentsModel.data.datepickermax" jd-input jd-label="Datepicker Min Date" jd-help="Valor: {{componentsCtrl.componentsModel.data.datepickermin | date:'shortDate'}}" ng-model="componentsCtrl.componentsModel.data.datepickermin" type="text" jd-datepicker>
+
+		<input required jd-min-date="componentsCtrl.componentsModel.data.datepickermin" jd-input jd-label="Datepicker Max Date" jd-help="Valor: {{componentsCtrl.componentsModel.data.datepickermax | date:'shortDate'}}" ng-model="componentsCtrl.componentsModel.data.datepickermax" type="text" jd-datepicker>
+	</div>
+	
+	<div class="row">
+		<input jd-input jd-label="Timepicker" jd-help="Valor: {{componentsCtrl.componentsModel.data.timepicker | date:'shortTime'}}" ng-model="componentsCtrl.componentsModel.data.timepicker" type="text" jd-datepicker="time">
+
+		<input jd-input jd-label="DateTimePicker" jd-help="Valor: {{componentsCtrl.componentsModel.data.datetimepicker | date:'short'}}" ng-model="componentsCtrl.componentsModel.data.datetimepicker" type="text" jd-datepicker="date-time">
+	</div-->
+
+    <h5 jd-i18n>Máscaras</h5>
+
+    <div class="row">
+        <input jd-input jd-label="CPF" jd-help="Valor: {{componentsCtrl.componentsModel.data.cpf | json}}" ng-model="componentsCtrl.componentsModel.data.cpf"
+        type="text" required mask="cpf" />
+
+        <input jd-input jd-label="CNPJ" jd-help="Valor: {{componentsCtrl.componentsModel.data.cnpj | json}}" ng-model="componentsCtrl.componentsModel.data.cnpj"
+        type="text" required mask="cnpj" />
+
+        <input jd-input jd-label="CEP" jd-help="Valor: {{componentsCtrl.componentsModel.data.cep | json}}" ng-model="componentsCtrl.componentsModel.data.cep"
+        type="text" required mask="cep" />
+
+        <input jd-input jd-label="Inteiro" jd-help="Valor: {{componentsCtrl.componentsModel.data.int | json}}" ng-model="componentsCtrl.componentsModel.data.int"
+        type="text" required mask="int" />
+
+        <input jd-input jd-label="Telefone" jd-help="Valor: {{componentsCtrl.componentsModel.data.tel | json}}" ng-model="componentsCtrl.componentsModel.data.tel"
+        type="text" required mask="tel" />
+
+        <input jd-input jd-label="Outro" jd-help="Valor: {{componentsCtrl.componentsModel.data.other | json}}" ng-model="componentsCtrl.componentsModel.data.other"
+        type="text" required mask="9999-9999-9999" />
+
+        <input jd-input jd-label="Decimal" jd-help="Valor: {{componentsCtrl.componentsModel.data.decimal | json}}" ng-model="componentsCtrl.componentsModel.data.decimal"
+        type="text" required ng-currency-mask currency="" />
+    </div>
+
+    <h5 jd-i18n>Grid</h5>
+
+    <table jd-table="componentsCtrl.componentsModel.list" jd-paginated>
+        <tbody>
+            <tr>
+                <td jd-sortable jd-attribute="id" jd-title="Código"></td>
+                <td jd-sortable jd-attribute="value" jd-title="Nome"></td>
+                <td jd-sortable jd-attribute="date" jd-title="Data" jd-filter="date:'short'"></td>
+                <td jd-sortable jd-attribute="number" jd-title="Número" jd-filter="currency"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h5 jd-i18n>Alertas</h5>
+
+    <div class="row">
+        <div class="col s12">
+            <button class="waves-effect waves-light btn" ng-click="componentsCtrl.method3()" jd-i18n>Alerta informativo</button>
+            <button class="waves-effect waves-light btn" ng-click="componentsCtrl.method4()" jd-i18n>Alerta de erro</button>
+            <button class="waves-effect waves-light btn" ng-click="componentsCtrl.method5()" jd-i18n>Toastr informativo</button>
+            <button class="waves-effect waves-light btn" ng-click="componentsCtrl.method6()" jd-i18n>Toastr de erro</button>
+        </div>
+    </div>
+
+    <h5 jd-i18n>Confirmação</h5>
+
+    <div class="row">
+        <div class="col s12">
+            <button class="waves-effect waves-light btn" ng-click="componentsCtrl.method8()" jd-i18n>Confirmação</button>
+        </div>
+    </div>
+
+    <h5 jd-i18n>Modais</h5>
+
+    <div class="row">
+        <div class="col s12">
+            <button class="waves-effect waves-light btn" ng-click="componentsCtrl.method7()" jd-i18n>Modal interna</button>
+            <button class="waves-effect waves-light btn" app-core-modalexample param="componentsCtrl.componentsModel.list" jd-i18n>Modal externa</button>
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="internalModalExample.html">
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Modal interna</h4>
+                <p>                    
+                    <div jd-input="12" jd-label="Param">{{param | json}}</div>
+                </p>
+            </div>
+        </div>
+    </script>
+</form>

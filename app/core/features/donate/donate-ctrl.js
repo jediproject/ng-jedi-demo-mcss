@@ -3,7 +3,7 @@
 /*
     Controller for the feature Donate
 */
-jd.factory.newController('app.core.animals.DonateCtrl', ['coreRestService', 'toastr', '$location', function (CoreRestService, toastr, $location) {
+jd.factory.newController('app.core.animals.DonateCtrl', ['coreRestService', '$location', function (CoreRestService, $location) {
 
     //#region Service initialize
     var service = CoreRestService.all('animals');
@@ -21,7 +21,7 @@ jd.factory.newController('app.core.animals.DonateCtrl', ['coreRestService', 'toa
     //#region Events definitions
     function save() {
         vm.donateModel.post().then(function () {
-            toastr.success('Animal cadastrado com sucesso.');
+            Materialize.toast('Animal cadastrado com sucesso.', 3000);
             $location.path('/core/animals');
         });
     }
