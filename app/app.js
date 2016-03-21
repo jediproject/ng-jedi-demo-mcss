@@ -72,6 +72,8 @@ define([
 
         UtilitiesConfig.noLabel = 'Não';
         UtilitiesConfig.yesLabel = 'Sim';
+        UtilitiesConfig.pageLoadUnknownError = 'Ocorreu algum erro desconhecido durante carregamento da página.';
+        UtilitiesConfig.jsUnknownError = 'Ocorreu algum erro desconhecido de script.';
 
         ActivitiesConfig.inProgressWarning = 'Ao realizar esta ação você perderá {{count}} atividade(s) pendentes.';
         ActivitiesConfig.title = 'Atividades';
@@ -95,7 +97,7 @@ define([
             signOutUrl: '/auth/signout',
             onCreateIdentity: function (response, identity) {
                 // complements for a identify
-                //identity.name = response.name;
+                identity.name = response.name;
                 //identity.email = response.email;
                 //identity.cpf = response.cpf;
                 return identity;

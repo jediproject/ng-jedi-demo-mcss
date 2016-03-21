@@ -8,7 +8,7 @@
             <a href="javascript:;" ng-click="appCtrl.setLanguage('en')" alt="English" ng-disabled="appCtrl.getLanguage() == 'en'"><img src="assets/img/en-US.png" /></a>
         </li>
         <li>
-            <a class="dropdown-button" href="#!" data-activates="dropdown1" dropdown>Usuário Logado{{appContext.identity.name}}<i class="material-icons right">arrow_drop_down</i></a>
+            <a class="dropdown-button" href="#!" data-activates="dropdown1" dropdown>{{appContext.identity.name}}<i class="material-icons right">arrow_drop_down</i></a>
             <ul id="dropdown1" class="dropdown-content">
                 <li><a href="#/core/mysubmodule/myfeature" jd-i18n>My Feature</a></li>
                 <li><a href="#/core/animals" jd-i18n>Animais</a></li>

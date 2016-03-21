@@ -33,7 +33,7 @@
     "ng-jedi-breadcrumb": ">=0.0.1",
     "ng-jedi-dialogs": "#materialize",
     "ng-jedi-loading": ">=0.0.4",
-    "ng-jedi-utilities": ">=0.0.1",
+    "ng-jedi-utilities": ">=0.0.5",
     "ng-jedi-factory": ">=0.0.1",
     "ng-jedi-layout": "#materialize",
     "ng-jedi-security": ">=0.0.1",
