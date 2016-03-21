@@ -1,0 +1,60 @@
+{
+    "fonts": {
+        "dest": "assets/font/",
+        "src": [
+            "bower_components/Materialize/dist/font/**/*.*"
+        ]
+    },
+    "css": {
+        "dest": "assets/css/",
+        "src": [
+            "bower_components/angular-loading-bar/build/loading-bar.css",
+            "bower_components/ng-jedi-loading/loading.css",
+            "bower_components/ng-jedi-table/table.css",
+            "bower_components/ng-jedi-activities/activities.css",
+            "bower_components/Materialize/dist/css/materialize.css"
+        ]
+    },
+    "libs": {
+        "dest": "assets/libs/",
+        "src": [
+            "bower_components/angular/angular.js",
+            "bower_components/angular-animate/angular-animate.js",
+            "bower_components/ng-jedi-security/security.js",
+            "bower_components/cryptojslib/rollups/md5.js",
+            "bower_components/angular-cookie/angular-cookie.js",
+            "bower_components/angular-file-upload-interceptor/angular-file-upload-interceptor.js",
+            "bower_components/angular-i18n/angular-locale_en.js",
+            "bower_components/angular-i18n/angular-locale_pt.js",
+            "bower_components/angular-dynamic-locale/dist/tmhDynamicLocale.js",
+            "bower_components/angular-loading-bar/build/loading-bar.js",
+            "bower_components/angular-ngMask-alias/dist/ngMask.js",
+            "bower_components/angular-route/angular-route.js",
+            "bower_components/angularAMD/angularAMD.js",
+            "bower_components/ng-currency-mask/dist/ng-currency-mask.js",
+            "bower_components/restangular/dist/restangular.js",
+            "bower_components/file-saver-saveas-js/FileSaver.js",
+            "bower_components/jquery/dist/jquery.js",
+            "bower_components/lodash/lodash.js",
+            "bower_components/moment/moment.js",
+            "bower_components/slimscroll/jquery.slimscroll.js",
+            "bower_components/requirejs/require.js",
+            "bower_components/requirejs-plugins/src/json.js",
+            "bower_components/requirejs-plugins/lib/text.js",
+            "bower_components/ng-jedi-breadcrumb/breadcrumb.js",
+            "bower_components/ng-jedi-dialogs/dialogs.js",
+            "bower_components/ng-jedi-loading/loading.js",
+            "bower_components/ng-jedi-utilities/utilities.js",
+            "bower_components/ng-jedi-factory/factory.js",
+            "bower_components/ng-jedi-factory/version.js",
+            "bower_components/ng-jedi-i18n/i18n.js",
+            "bower_components/ng-jedi-layout/layout.js",
+            "bower_components/ng-jedi-table/table.js",
+            "bower_components/ng-jedi-activities/activities.js",
+            "bower_components/angular-indexed-db/angular-indexed-db.js",
+            "bower_components/Materialize/dist/js/materialize.js",
+            "bower_components/angular-materialize/src/angular-materialize.js",
+            "bower_components/hammerjs/hammer.js"
+        ]
+    }
+}

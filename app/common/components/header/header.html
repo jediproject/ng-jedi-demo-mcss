@@ -1,0 +1,36 @@
+<div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo" jd-i18n>Adote-me</a>
+    <ul class="right hide-on-med-and-down">
+        <li>
+            <a href="javascript:;" ng-click="appCtrl.setLanguage('pt')" alt="Português" ng-disabled="appCtrl.getLanguage() == 'pt'"><img src="assets/img/pt-BR.png" /></a>
+        </li>
+        <li>
+            <a href="javascript:;" ng-click="appCtrl.setLanguage('en')" alt="English" ng-disabled="appCtrl.getLanguage() == 'en'"><img src="assets/img/en-US.png" /></a>
+        </li>
+        <li>
+            <a class="dropdown-button" href="#!" data-activates="dropdown1" dropdown>Usuário Logado{{appContext.identity.name}}<i class="material-icons right">arrow_drop_down</i></a>
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#/core/mysubmodule/myfeature1" jd-i18n>My Feature 1</a></li>
+                <li><a href="#/core/mysubmodule/myfeature2" jd-i18n>My Feature 2</a></li>
+                <!--#hook.yeoman.menu# do not remove this line-->
+                <li class="divider"></li>
+                <li><a href="javascript:;" jd-i18n title="Sair" ng-click="appCtrl.signout()">Sair</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul id="nav-mobile" class="side-nav" style="left: -250px;">
+        <li><a href="#/core/mysubmodule/myfeature1" jd-i18n>My Feature 1</a></li>
+        <li><a href="#/core/mysubmodule/myfeature2" jd-i18n>My Feature 2</a></li>
+        <!--#hook.yeoman.menu# do not remove this line-->
+        <li class="divider"></li>
+        <li>
+            <a href="javascript:;" ng-click="appCtrl.setLanguage('pt')" alt="Português" ng-disabled="appCtrl.getLanguage() == 'pt'"><img src="assets/img/pt-BR.png" /></a>
+        </li>
+        <li>
+            <a href="javascript:;" ng-click="appCtrl.setLanguage('en')" alt="English" ng-disabled="appCtrl.getLanguage() == 'en'"><img src="assets/img/en-US.png" /></a>
+        </li>
+        <li class="divider"></li>
+        <li><a href="javascript:;" jd-i18n title="Sair" ng-click="appCtrl.signout()">Sair</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse" sidenav><i class="material-icons">menu</i></a>
+</div>

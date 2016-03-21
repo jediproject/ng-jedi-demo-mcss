@@ -1,0 +1,11 @@
+build/
+node_modules/
+bower_components/
+assets/font/
+assets/libs/
+assets/css/
+**/env/*-env.json
+version.json
+*.log
+*.*~
+.history/

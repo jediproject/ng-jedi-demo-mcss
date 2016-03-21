@@ -1,0 +1,24 @@
+/* custom css */
+a[disabled] img, img[disabled] {
+    filter: alpha(opacity=60);
+    opacity: .6;
+}
+
+input.ng-dirty.ng-invalid, select.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
+    border-bottom: 1px solid #F44336 !important;
+    box-shadow: 0 1px 0 0 #F44336 !important;
+}
+
+label.focus {
+    color: #26a69a;
+}
+
+.jd-statictext div[jd-input] {
+    margin: 14px 0;
+}
+
+.jd-statictext label {
+    font-size: 0.8rem;
+    -webkit-transform: translateY(-140%);
+    transform: translateY(-140%);
+}
