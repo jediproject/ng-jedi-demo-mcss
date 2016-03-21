@@ -1,9 +1,9 @@
 'use strict';
 
 /*
-    Controller for the feature myfeature2
+    Controller and modal for the feature Modalexample
 */
-jd.factory.newController('app.core.mysubmodule.myfeature2.Myfeature2Ctrl', ['jedi.dialogs.AlertHelper', function (alertHelper) {
+jd.factory.newModal('appCoreModalexample', 'app/core/features/modalexample/modalexample.html', 'app.core.modalexample.ModalexampleCtrl', ['jedi.dialogs.AlertHelper', ['param'], function (alertHelper, _param) {
 
     //#region Service initialize
     var service;// = ... e.g: restangular instance
@@ -11,7 +11,7 @@ jd.factory.newController('app.core.mysubmodule.myfeature2.Myfeature2Ctrl', ['jed
 
     //#region View/Model initialize
     var vm = this;
-    vm.myfeature2Model = {};
+    vm.modalexampleModel = {param: _param};
     //#endregion
 
     //#region Events binds
@@ -20,16 +20,16 @@ jd.factory.newController('app.core.mysubmodule.myfeature2.Myfeature2Ctrl', ['jed
     //#endregion
 
     //#region Load controller
-    method2();
+    //method2();
     //#endregion
 
     //#region Events definitions
     function method1() {
-        alertHelper.addInfo('Method1 called');
+        alertHelper.addInfo('Method1 chamado');
     }
 
     function method2() {
-        Materialize.toast('Method2 called', 4000);
+        Materialize.toast('Method2 chamado', 3000);
     }
     //#endregion
 

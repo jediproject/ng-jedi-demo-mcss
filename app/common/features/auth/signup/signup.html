@@ -1,81 +1,51 @@
-<div class="page col-md-5 col-md-offset-4" jd-full-screen-page>
-    <div class="panel panel-default">
-        <div class="panel-heading text-center">
-            Expenses
-        </div>
-
-        <div class="panel-body">
-            <form name="form_signup" class="form-horizontal form-validation" ng-controller="app.common.auth.signup.SignupCtrl as signupCtrl" novalidate ng-submit="signupCtrl.save()">
-                <fieldset>
-                    <div class="form-group">
-                        <div class="btn-icon-lined btn-icon-round btn-icon-sm btn-default-light">
-                            <span class="fa fa-pencil-square-o"></span>
-                        </div>
-                        <input type="email"
+<div class="row" jd-full-screen-page>
+    <div class="col s12 card-panel z-depth-4">
+        <form class="login-form" ng-controller="app.common.auth.signup.SignupCtrl as signupCtrl" name="form_signup" novalidate ng-submit="signupCtrl.save()">
+            <div class="row">
+                <div class="input-field col s12 center">
+                    <p class="center" jd-i18n>Adote-me</p>
+                </div>
+            </div>
+            <div class="row margin">
+                <input jd-input="12" jd-label="Nome" required ng-model="signupCtrl.signupModel.nome" type="text">
+            </div>
+            <div class="row margin">
+                <input jd-input="12" jd-label="Email" required ng-model="signupCtrl.signupModel.email" type="text">
+            </div>
+            <div class="row margin">
+                <input type="text"
+                        name="signupCtrl.signupModel.cpf"
+                        mask="cpf"
+                        jd-input="12"
+                        required
+                        ng-model="signupCtrl.signupModel.cpf"
+                        jd-label="CPF">
+            </div>
+            <div class="row margin">
+                <input jd-input="12" jd-label="Usuário" required ng-model="signupCtrl.signupModel.username" type="text">
+            </div>
+            <div class="row margin">
+                <input jd-input="12" jd-label="Senha" required ng-model="signupCtrl.signupModel.password" type="password">
+            </div>
+            <div class="row margin">
+                <input type="password"
                                class="form-control input-lg input-round text-center"
-                               jd-validation-tooltip
+                               jd-input="12"
                                required
-                               ng-maxlength="100"
-                               ng-model="signupCtrl.signupModel.email"
-                               jd-i18n placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <div class="btn-icon-lined btn-icon-round btn-icon-sm btn-default-light">
-                            <span class="fa fa-pencil-square-o"></span>
-                        </div>
-                        <input type="text"
-                               class="form-control input-lg input-round text-center"
-                               jd-validation-tooltip
-                               required
-                               ng-maxlength="100"
-                               ng-model="signupCtrl.signupModel.name"
-                               jd-i18n placeholder="Nome">
-                    </div>
-                    <div class="form-group">
-                        <div class="btn-icon-lined btn-icon-round btn-icon-sm btn-default-light">
-                            <span class="fa fa-pencil-square-o"></span>
-                        </div>
-                        <input type="text"
-                               name="signupCtrl.signupModel.cpf"
-                               mask="cpf"
-                               clean="true"
-                               class="form-control input-lg input-round text-center"
-                               jd-validation-tooltip
-                               required
-                               ng-model="signupCtrl.signupModel.cpf"
-                               jd-i18n placeholder="CPF">
-                    </div>
-                    <div class="form-group">
-                        <div class="btn-icon-lined btn-icon-round btn-icon-sm btn-default-light">
-                            <span class="fa fa-pencil-square-o"></span>
-                        </div>
-                        <input type="password"
-                               class="form-control input-lg input-round text-center"
-                               jd-validation-tooltip
-                               required
-                               ng-model="signinCtrl.signinModel.password"
-                               jd-i18n placeholder="Senha">
-                    </div>
-                    <div class="form-group">
-                        <div class="btn-icon-lined btn-icon-round btn-icon-sm btn-default-light">
-                            <span class="fa fa-pencil-square-o"></span>
-                        </div>
-                        <input type="password"
-                               class="form-control input-lg input-round text-center"
-                               jd-validation-tooltip
-                               required
-                               jd-validate-equals="signinCtrl.signinModel.password"
-                               ng-model="signinCtrl.signinModel.confirmPassword"
-                               jd-i18n placeholder="Confirmação de Senha">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit"
-                                class="btn btn-primary btn-lg btn-round btn-block text-center"
-                                ng-disabled="!form_signup.$valid" jd-i18n>Salvar
-                        </button>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
+                               jd-validate-equals="signupCtrl.signupModel.password"
+                               ng-model="signupCtrl.signupModel.confirmPassword"
+                               jd-label="Confirmação de Senha">
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <button ng-disabled="!form_signup.$valid" class="btn waves-effect waves-light col s12" jd-i18n>Salvar</buutton>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 m6 l6">
+                    <p class="margin medium-small"><a href="#/common/auth/signin" jd-i18n>Entrar</a></p>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

@@ -26,8 +26,8 @@ define([
     // store envSettings as a constant
     app.constant('envSettings', envSettings);
 
-    app.config(['$routeProvider', '$httpProvider', 'jedi.security.SecurityServiceProvider',
-        'RestangularProvider', 'ngMaskConfig', 'jedi.utilities.UtilitiesProvider', 'jedi.i18n.LocalizeConfig', 'jedi.layout.LayoutConfig', function ($routeProvider, $httpProvider, authServiceProvider, RestangularProvider,  ngMaskConfig, Utilities, LocalizeConfig, LayoutConfig) {
+    app.config(['$routeProvider', '$httpProvider', 'jedi.security.SecurityServiceProvider', 'RestangularProvider', '$provide', 'jedi.utilities.UtilitiesProvider', 'jedi.i18n.LocalizeConfig', 'jedi.dialogs.DialogsConfig', 'jedi.layout.validationtooltip.ValidationTooltipConfig', 'jedi.layout.treeview.TreeviewConfig', 'jedi.utilities.UtilitiesConfig', 'jedi.activities.ActivitiesConfig', 'ngMaskConfig', 'jedi.layout.LayoutConfig', function ($routeProvider, $httpProvider, authServiceProvider, RestangularProvider, $provide, Utilities, LocalizeConfig, DialogsConfig, ValidationTooltipConfig, TreeviewConfig, UtilitiesConfig, ActivitiesConfig, ngMaskConfig, LayoutConfig) {
+
         var $log = angular.injector(['ng']).get('$log');
 
         LayoutConfig.defaultUiImpl = 'materialize';
@@ -44,8 +44,48 @@ define([
         // configure Restangular
         Utilities.configureRestangular(RestangularProvider);
 
-        // configure language
-        LocalizeConfig.defaultLanguage = 'en';
+        // configure default texts to pt-BR
+        TreeviewConfig.emptyMsgLabel = 'Nenhum item encontrado.';
+
+        DialogsConfig.confirmYesLabel = 'Sim';
+        DialogsConfig.confirmNoLabel = 'Não';
+        DialogsConfig.confirmTitle = 'Atenção!';
+        DialogsConfig.alertTitle = 'Atenção!';
+
+        ValidationTooltipConfig.messages = {
+            'required': 'Preenchimento obrigatório.',
+            'minlength': 'Informe pelo menos {{minLength}} caracteres.',
+            'maxlength': 'Informe até {{maxLength}} caracteres.',
+            'pattern': 'Valor preenchido é inválido.',
+            'equal': 'Valor informado não é igual ao campo anterior.',
+            'email': 'Email informado é inválido.',
+            'url': 'Url informada é inválida.',
+            'number': 'Informe um número válido.',
+            'datepicker': 'Informe uma data válida.',
+            'date': 'Informe uma data válida.',
+            'min': 'Informe um número a partir de {{min}}.',
+            'max': 'Informe um número até {{max}}.',
+            'cpf': 'CPF informado é inválido.',
+            'cnpj': 'CNPJ informado é inválido.',
+            'default': 'Conteúdo do campo é inválido.'
+        };
+
+        UtilitiesConfig.noLabel = 'Não';
+        UtilitiesConfig.yesLabel = 'Sim';
+
+        ActivitiesConfig.inProgressWarning = 'Ao realizar esta ação você perderá {{count}} atividade(s) pendentes.';
+        ActivitiesConfig.title = 'Atividades';
+        ActivitiesConfig.minimizeLabel = 'Minimizar';
+        ActivitiesConfig.closeLabel = 'Fechar';
+        ActivitiesConfig.successLabel = 'Concluído';
+        ActivitiesConfig.errorLabel = 'Erro';
+        ActivitiesConfig.saveLabel = 'Salvar';
+        ActivitiesConfig.removeLabel = 'Excluir';
+
+        LocalizeConfig.defaultLanguage = 'pt';
+
+        UtilitiesConfig.wideClass = 'wide';
+        UtilitiesConfig.wideSelectorElement = 'html';
 
         // configure authService
         authServiceProvider.config({
@@ -82,6 +122,10 @@ define([
         $log.info('Registry security events');
 
         function loadUserProfile(ev, identity) {
+            $timeout(function() {
+                $('html > body > nav').removeClass('hide');
+            });
+
             // user authenticated
             $rootScope.appContext.identity = identity;
 
@@ -98,15 +142,20 @@ define([
 
                 $routeProviderReference
                     //#hook.yeoman.route# do not remove this line
-                    .when('/core/mysubmodule/myfeature1', angularAMD.route({
-                        breadcrumb: ['Core', 'My Submodule', 'My Feature 1'],
-                        templateUrl: jd.factory.getFileVersion('app/core/features/mysubmodule/myfeature1/myfeature1.html'),
-                        controllerUrl: jd.factory.getFileVersion('app/core/features/mysubmodule/myfeature1/myfeature1-ctrl.js')
+                    .when('/core/mysubmodule/myfeature', angularAMD.route({
+                        breadcrumb: ['Core', 'My Submodule', 'My Feature'],
+                        templateUrl: jd.factory.getFileVersion('app/core/features/mysubmodule/myfeature/myfeature.html'),
+                        controllerUrl: jd.factory.getFileVersion('app/core/features/mysubmodule/myfeature/myfeature-ctrl.js')
                     })).
-                    when('/core/mysubmodule/myfeature2', angularAMD.route({
-                        breadcrumb: ['Core', 'My Submodule', 'My Feature 2'],
-                        templateUrl: jd.factory.getFileVersion('app/core/features/mysubmodule/myfeature2/myfeature2.html'),
-                        controllerUrl: jd.factory.getFileVersion('app/core/features/mysubmodule/myfeature2/myfeature2-ctrl.js')
+                    when('/core/animals', angularAMD.route({
+                        breadcrumb: ['Core', 'Animais'],
+                        templateUrl: jd.factory.getFileVersion('app/core/features/animals/animals.html'),
+                        controllerUrl: jd.factory.getFileVersion('app/core/features/animals/animals-ctrl.js')
+                    })).
+                    when('/core/donate', angularAMD.route({
+                        breadcrumb: ['Core', 'Quero Doar'],
+                        templateUrl: jd.factory.getFileVersion('app/core/features/donate/donate.html'),
+                        controllerUrl: jd.factory.getFileVersion('app/core/features/donate/donate-ctrl.js')
                     }));
                 
                 $route.reload();
@@ -118,6 +167,10 @@ define([
         }
 
         function resetUserProfile(ev, data, status, config, cause) {
+            $timeout(function() {
+                $('html > body > nav').addClass('hide');
+            });
+
             // user unauthenticated
             $routeProviderReference
                 .when("/common/auth/signin", angularAMD.route({

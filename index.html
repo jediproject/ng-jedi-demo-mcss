@@ -6,7 +6,7 @@
 <html class="no-js">
 <!--<![endif]-->
     <head>
-        <title jd-i18n>Expenses</title>
+        <title jd-i18n>Adote-me</title>
         <meta charset="utf-8">
         <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
         <meta name="description" content="Expenses">
@@ -36,7 +36,7 @@
         <jd-loading></jd-loading>
 
         <nav ng-include="'app/common/components/header/header.html'"
-            class="light-blue lighten-1" role="navigation"></nav>
+            class="light-blue lighten-1 hide" ng-class="{'hide': !appContext.identity}" role="navigation"></nav>
 
         <div class="container" ng-view></div>
 

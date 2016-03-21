@@ -22,3 +22,23 @@ label.focus {
     -webkit-transform: translateY(-140%);
     transform: translateY(-140%);
 }
+
+/*Wide Screen*/
+html.wide {
+    display: table;
+    margin: auto;
+    height: 100%;
+}
+html.wide body {
+    display: table-cell;
+    vertical-align: middle;
+}
+html.wide body > nav {
+    display: none;
+}
+html.wide .container {
+    width: 100%;
+}
+.login-form {
+    width: 280px;
+}
