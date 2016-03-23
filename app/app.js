@@ -26,11 +26,9 @@ define([
     // store envSettings as a constant
     app.constant('envSettings', envSettings);
 
-    app.config(['$routeProvider', '$httpProvider', 'jedi.security.SecurityServiceProvider', 'RestangularProvider', '$provide', 'jedi.utilities.UtilitiesProvider', 'jedi.i18n.LocalizeConfig', 'jedi.dialogs.DialogsConfig', 'jedi.layout.validationtooltip.ValidationTooltipConfig', 'jedi.layout.treeview.TreeviewConfig', 'jedi.utilities.UtilitiesConfig', 'jedi.activities.ActivitiesConfig', 'ngMaskConfig', 'jedi.layout.LayoutConfig', function ($routeProvider, $httpProvider, authServiceProvider, RestangularProvider, $provide, Utilities, LocalizeConfig, DialogsConfig, ValidationTooltipConfig, TreeviewConfig, UtilitiesConfig, ActivitiesConfig, ngMaskConfig, LayoutConfig) {
+    app.config(['$routeProvider', '$httpProvider', 'jedi.security.SecurityServiceProvider', 'RestangularProvider', '$provide', 'jedi.utilities.UtilitiesProvider', 'jedi.i18n.LocalizeConfig', 'jedi.dialogs.DialogsConfig', 'jedi.layout.validationtooltip.ValidationTooltipConfig', 'jedi.layout.treeview.TreeviewConfig', 'jedi.utilities.UtilitiesConfig', 'jedi.activities.ActivitiesConfig', 'ngMaskConfig', function ($routeProvider, $httpProvider, authServiceProvider, RestangularProvider, $provide, Utilities, LocalizeConfig, DialogsConfig, ValidationTooltipConfig, TreeviewConfig, UtilitiesConfig, ActivitiesConfig, ngMaskConfig) {
 
         var $log = angular.injector(['ng']).get('$log');
-
-        LayoutConfig.defaultUiImpl = 'materialize';
 
         // store local $routeProviderReference to be used during run, if it work with dynamic route mapping
         $routeProviderReference = $routeProvider;

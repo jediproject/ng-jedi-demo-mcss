@@ -49,6 +49,7 @@
             "bower_components/ng-jedi-factory/version.js",
             "bower_components/ng-jedi-i18n/i18n.js",
             "bower_components/ng-jedi-layout/layout.js",
+            "bower_components/ng-jedi-layout/layout-impl-mcss.js",
             "bower_components/ng-jedi-table/table.js",
             "bower_components/ng-jedi-activities/activities.js",
             "bower_components/angular-indexed-db/angular-indexed-db.js",

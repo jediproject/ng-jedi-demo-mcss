@@ -21,6 +21,7 @@ require.config({
         'jdver': 'assets/libs/ng-jedi-factory/version',
         'ng-jedi-loading': 'assets/libs/ng-jedi-loading/loading',
         'ng-jedi-layout': 'assets/libs/ng-jedi-layout/layout',
+        'ng-jedi-layout-impl': 'assets/libs/ng-jedi-layout/layout-impl-mcss',
         'ng-jedi-table': 'assets/libs/ng-jedi-table/table',
         'ng-jedi-activities': 'assets/libs/ng-jedi-activities/activities',
         'ng-jedi-security': 'assets/libs/ng-jedi-security/security',
