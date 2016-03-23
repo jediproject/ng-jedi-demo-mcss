@@ -29,12 +29,12 @@
     "ng-currency-mask": "=1.0.7",
     "requirejs-plugins": "=1.0.3",
     "angular-dynamic-locale": "=0.1.27",
-    "ng-jedi-i18n": ">=0.0.1",
+    "ng-jedi-i18n": "#materialize",
     "ng-jedi-breadcrumb": "#materialize",
     "ng-jedi-dialogs": "#materialize",
-    "ng-jedi-loading": ">=0.0.4",
-    "ng-jedi-utilities": ">=0.0.5",
-    "ng-jedi-factory": ">=0.0.1",
+    "ng-jedi-loading": "#materialize",
+    "ng-jedi-utilities": "#materialize",
+    "ng-jedi-factory": "#materialize",
     "ng-jedi-layout": "#materialize",
     "ng-jedi-security": ">=0.0.1",
     "ng-jedi-activities": ">=0.0.1",
@@ -46,6 +46,8 @@
   "resolutions": {
     "angular": "=1.4.4",
     "moment": "=2.10.6",
-    "requirejs": "=2.1.22"
+    "requirejs": "=2.1.22",
+    "ng-jedi-utilities": ">=0.0.1",
+    "ng-jedi-dialogs": "0.0.7"
   }
 }
