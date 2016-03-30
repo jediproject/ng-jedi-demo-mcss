@@ -28,7 +28,11 @@ jd.factory.newController(['app/core/features/modalexample/modalexample-ctrl.js']
               date: new Date(),
               number: 333.33
             }
-        ]
+        ],
+        data: {
+            datepickermax: new Date(),
+            decimal: 123.45
+        }
     };
     //#endregion
 

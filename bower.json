@@ -38,7 +38,7 @@
     "ng-jedi-layout": "#materialize",
     "ng-jedi-security": ">=0.0.1",
     "ng-jedi-activities": ">=0.0.1",
-    "ng-jedi-table": ">=0.0.1",
+    "ng-jedi-table": "#materialize",
     "Materialize": "materialize#=0.97.5",
     "angular-materialize": "=0.1.2",
     "hammerjs": "=2.0.6"

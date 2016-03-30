@@ -56,6 +56,7 @@ require.config({
         'jquery': 'assets/libs/jquery/jquery',
         'lodash': 'assets/libs/lodash/lodash',
         'moment': 'assets/libs/moment/moment',
+        'moment-locale': 'assets/libs/moment/pt',
         'slimscroll': 'assets/libs/slimscroll/jquery.slimscroll',
         'json': 'assets/libs/requirejs-plugins/json',
         'text': 'assets/libs/requirejs-plugins/text'
@@ -82,7 +83,7 @@ require.config({
         "angular-file-upload": ["angular"],
         "restangular": ["lodash", "angular"],
         "angular-loading-bar": ["angular"],
-        'angular-dynamic-locale': ["angular"],
+        'angular-dynamic-locale': ["angular", 'moment-locale'],
         'angular-indexed-db': ['angular'],
         'angular-materialize': ['angular'/*, 'materialize'*/]
     },

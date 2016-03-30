@@ -45,15 +45,15 @@
         <textarea jd-input="12" jd-label="Textarea" ng-model="componentsCtrl.componentsModel.data.textarea" required rows="5" jd-help="Valor: {{componentsCtrl.componentsModel.data.textarea | json}}"></textarea>
     </div>
 
-    <!--h5 jd-i18n>Data / Horas</h5>
+    <h5 jd-i18n>Data / Horas</h5>
 
 	<div class="row">
-		<input required jd-max-date="componentsCtrl.componentsModel.data.datepickermax" jd-input jd-label="Datepicker Min Date" jd-help="Valor: {{componentsCtrl.componentsModel.data.datepickermin | date:'shortDate'}}" ng-model="componentsCtrl.componentsModel.data.datepickermin" type="text" jd-datepicker>
+        <input required jd-max-date="componentsCtrl.componentsModel.data.datepickermax" jd-input jd-label="Datepicker Min Date" jd-help="Valor: {{componentsCtrl.componentsModel.data.datepickermin | date:'shortDate'}}" ng-model="componentsCtrl.componentsModel.data.datepickermin" type="text" jd-datepicker>
 
-		<input required jd-min-date="componentsCtrl.componentsModel.data.datepickermin" jd-input jd-label="Datepicker Max Date" jd-help="Valor: {{componentsCtrl.componentsModel.data.datepickermax | date:'shortDate'}}" ng-model="componentsCtrl.componentsModel.data.datepickermax" type="text" jd-datepicker>
-	</div>
-	
-	<div class="row">
+        <input jd-min-date="componentsCtrl.componentsModel.data.datepickermin" jd-input jd-label="Datepicker Max Date" jd-help="Valor: {{componentsCtrl.componentsModel.data.datepickermax | date:'shortDate'}}" ng-model="componentsCtrl.componentsModel.data.datepickermax" type="text" jd-datepicker>
+    </div>
+
+    <!--div class="row">
 		<input jd-input jd-label="Timepicker" jd-help="Valor: {{componentsCtrl.componentsModel.data.timepicker | date:'shortTime'}}" ng-model="componentsCtrl.componentsModel.data.timepicker" type="text" jd-datepicker="time">
 
 		<input jd-input jd-label="DateTimePicker" jd-help="Valor: {{componentsCtrl.componentsModel.data.datetimepicker | date:'short'}}" ng-model="componentsCtrl.componentsModel.data.datetimepicker" type="text" jd-datepicker="date-time">
